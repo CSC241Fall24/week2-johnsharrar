@@ -12,24 +12,16 @@ public class Q1WeirdFunction {
 
     public static int fIterative(int n) {
         // TODO: Implement the iterative function
-        if (n == 0){
-            return 0;
+        if(n < 3){
+            return n;
         }
-        else if (n == 1){
-            return 1;
-        }
-        else if (n == 2){
-            return 2;
-        }
-        int a = 0;
-        int b = 1;
-        int c = 2;
+        int[] results = new int[n+1];
+        results[0] = 0;
+        results[1] = 1;
+        results[2] = 2;
         for(int i = 3; i <= n; i++){
-            int temp = a + (2 * b) + (3 * c);
-            a = b;
-            b = c;
-            c = temp;
+            results[i] = results[i-1] + (2 * results[i-2]) + (3 * results[i-3]);
         }
-        return c;
+        return results[n];
     }
 }
