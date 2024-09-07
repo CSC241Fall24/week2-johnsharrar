@@ -7,6 +7,9 @@ public class Q4ReverseString {
         if(s.length() == 1){
             return s;
         }
-        return reverse(s.substring(1)) + s.charAt(0);
+        else if (s.length() > 1){
+            return reverse(s.substring(1)) + s.charAt(0);
+        }
+        return "";
     }
 }
